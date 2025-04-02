@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: votacaodb
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      - pg-config:/etc/postgresql
+
+volumes:
+  pg-data:
+  pg-config:
